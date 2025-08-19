@@ -1,0 +1,71 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: system-ui, sans-serif, serif, monospace;
+  color-scheme: light dark;
+  color: light-dark(#000,#fff);
+  background: light-dark(#fff,#000);
+}
+body {
+  margin: auto;
+  width: min(100vw, 40em);
+  padding: 32px;
+}
+h1 {
+  font-size: 2em;
+  line-height: 1.25;
+  margin: 0 0 1em;
+}
+p {
+  margin: 1em 0;
+  text-wrap: balance;
+}
+header {
+  margin: 0 0 64px;
+}
+footer {
+  margin: 64px 0 0;
+}
+:any-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+[target=_blank]::after {
+  content: "";
+  margin-inline-start: 0.125em;
+  display: inline-grid;
+  width: 1ch;
+  height: 1ch;
+  vertical-align: super;
+  background: currentColor;
+  clip-path: shape(
+    from 0 0,
+    vline by 1ch,
+    hline by 1ch,
+    vline by -0.15625ch,
+    hline to 0.15625ch,
+    vline to 0,
+    close,
+    move to 0.5ch 0,
+    vline by 0.125ch,
+    hline by 0.25ch,
+    line by -0.357ch 0.357ch,
+    line by 0.125ch 0.125ch,
+    line by 0.357ch -0.357ch,
+    vline by 0.25ch,
+    hline to 1ch,
+    vline to 0,
+    close
+  );
+}
+.em-links :any-link {
+  color: light-dark(#08c,#6cf)
+}
+[hidden] {
+  display: none !important;
+}
